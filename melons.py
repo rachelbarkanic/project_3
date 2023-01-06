@@ -1,4 +1,5 @@
 import csv
+from pprint import pprint
 
 class Melon:
     def __init__(
@@ -8,8 +9,8 @@ class Melon:
         price,
         image_url,
         color,
-        seedless
-    ):
+        seedless):
+
         self.melon_id = melon_id
         self.common_name = common_name
         self.price = price
@@ -20,28 +21,18 @@ class Melon:
     def __repr__(self):
         '''Convenience method to show information about melon in comsole.'''
 
-        return(
-            f'<Melon: {self.melon_id}. {self.common_name}>'
-        )
+        return f'<Melon: {self.melon_id}, {self.common_name}>'
+        
     def price_str(self):
         '''Return price formatted as string $x.xx'''
 
-        return f'${self.price:.2f}'
-
-
-
-
-# with open('melons.csv') as csvfile:
-#     rows = csv.DictReader(csvfile)
-#     for row in rows:
-#         print(row)
+        return f'${self.price: .2f}'
 
 
 melon_dict = {}
 
-with open('melons.csv') as csvfile:
+with open('melons.csv', 'r') as csvfile:
     rows = csv.DictReader(csvfile)
-
     for row in rows:
         melon_id = row['melon_id']
         melon = Melon(
@@ -53,10 +44,11 @@ with open('melons.csv') as csvfile:
             eval(row['seedless']))
         melon_dict[melon_id] = melon
 
-def get_melon_by_id(melon_id):
-    '''Return a melon, given its ID.'''
-    return melon_dict[melon_id]
+        
+def get_by_id(melon_id):
+   return melon_dict[melon_id]
 
-def list_of_melons():
-    '''Return list of all melons.'''
-    return list(melon_dict.values())
+# print(get_by_id("fair"))
+
+def get_all():
+   return list(melon_dict.values())
