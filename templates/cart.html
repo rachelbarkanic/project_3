@@ -2,6 +2,7 @@
 
 {% block body %}
 
+    <h1>My Shopping Cart</h1>
    <table class="table table-striped mt-3">
       <thead>
       <tr>
@@ -24,4 +25,6 @@
    </table>
 
    <h3>Total: ${{ "%0.2f" | format(order_total) }}</h3>
+
+   <a href="/empty-cart" class="btn btn-primary">Empty Cart</a>
 {% endblock %}

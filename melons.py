@@ -44,11 +44,10 @@ with open('melons.csv', 'r') as csvfile:
             eval(row['seedless']))
         melon_dict[melon_id] = melon
 
-        
+
 def get_by_id(melon_id):
    return melon_dict[melon_id]
 
-# print(get_by_id("fair"))
 
 def get_all():
    return list(melon_dict.values())
