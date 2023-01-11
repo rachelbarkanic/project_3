@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
 
 {% block body %}
+<br>
+<h1>Melons on Melons</h1>
 <div id="melon-list">
     {% for melon in melon_list %}
-    <div class="card text-center">
+    <div class="card text-center" id="melon-div">
         <img class="melon-image" src="{{ melon.image_url }}">
         <h5>
             <a href="{{ url_for('individual_melon', melon_id = melon.melon_id) }}">

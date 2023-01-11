@@ -1,9 +1,48 @@
 .melon-image {
     height: 300px;
     width: 300px;
+    border-radius: 50%;
 }
 
 #melon-list {
     display: flex;
     flex-wrap: wrap;
+}
+
+body {
+    background-color: rgb(175, 107, 143);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    cursor: crosshair;
+    color: white;
+    
+}
+
+a {
+    color: darkorange;
+}
+
+a:hover {
+    color: mediumvioletred;
+    cursor: grab;
+}
+
+#melon-div {
+    border: 0px;
+    border-color: none;
+    background-color: rgb(175, 107, 143);
+    padding: 10px 10px 10px 10px;
+}
+
+.btn {
+    background-color: rgb(240, 156, 52);
+    border-color: white;
+}
+
+.btn:hover {
+    background-color: darkcyan;
+}
+
+h1 {
+    color: white;
+    text-align: center;
 }

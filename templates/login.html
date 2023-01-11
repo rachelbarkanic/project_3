@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<h1>Sign In Please!</h1>
+
+<form method="POST" action="/login">
+    <div>{{ form.username.label }}: {{ form.username }}</div>
+    <div>{{ form.password.label }}: {{ form.password }}</div>
+    {{ form.csrf_token }}
+    <button class="btn btn-primary" type="submit">Sign In</button>
+</form>
+
+{% endblock %}
